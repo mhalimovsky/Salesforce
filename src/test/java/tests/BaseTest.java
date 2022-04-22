@@ -38,7 +38,6 @@ public class BaseTest {
         context.setAttribute("driver", driver);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);
 
         loginPage = new LoginPage(driver);
         accountListPage = new AccountListPage(driver);
@@ -46,6 +45,8 @@ public class BaseTest {
         accountSteps = new AccountSteps(driver);
         loginSteps = new LoginSteps(driver);
         contactSteps = new ContactSteps(driver);
+        driver = new ChromeDriver(options);
+
 
         newAccountModal = new NewAccountModal(driver);
         newContactModal = new NewContactModal(driver);
